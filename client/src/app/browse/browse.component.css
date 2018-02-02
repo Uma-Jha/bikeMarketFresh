@@ -1,0 +1,24 @@
+.col-md-2{
+    text-align: center;
+}
+.col-md-6{
+    margin-left: 5px;
+}
+.scrollbar{
+    max-height: 600px;
+    overflow-y: auto;
+
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.listingbox{
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.listingbox_div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

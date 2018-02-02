@@ -1,0 +1,155 @@
+<div class="bigbox row">
+  <h4>Create Listing</h4>
+  <div class="createbox col-md-10 offset-1">
+    <div class="bs-component">
+      <form (submit)="addListing()">
+        <fieldset>
+          <div class="form-group row">
+
+            <div class="listingbox_div col-md-3">
+              <div class="form-group row">
+                <label>Image Upload</label> 
+              </div>
+              <div class="form-group row">
+                <img src="http://via.placeholder.com/150x150" alt="Bike image">
+             </div>
+            </div>
+
+            <div class="listingbox_div col-md-7">
+
+              <div class="form-group row">
+                <div class="title_box">
+                  <label>Title</label>
+                  <input 
+                    class="title_input form-control form-control-sm" 
+                    type="text" name="newlisting.title" 
+                    [(ngModel)]="newlisting.title">
+                </div>
+                <div class="title_box">
+                  <label>Img URL</label>
+                  <input 
+                    class="img_input form-control form-control-sm" 
+                    type="text" 
+                    name="newlisting.image" 
+                    [(ngModel)]="newlisting.image">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label>Description</label>
+                <textarea 
+                  class="form-control form-control-sm" 
+                  name="newlisting.description"
+                  [(ngModel)]="newlisting.description">
+                </textarea>
+              </div>
+
+            </div>
+
+            <div class="listingbox_div col-md-2">
+
+              <div class="form-group row">
+                <label>Price</label>
+                <input 
+                  class="form-control form-control-sm" 
+                  type="text" 
+                  name="newlisting.price"
+                  [(ngModel)]="newlisting.price">
+              </div>
+
+              <div class="form-group row">
+                <label>Location</label>
+                <input 
+                  class="form-control form-control-sm" 
+                  type="text" 
+                  name="newlisting.location"
+                  [(ngModel)]="newlisting.location">
+                <input class="listingbtn btn btn-success" type="submit" value="CREATE">
+              </div>
+
+            </div>
+
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="bigbox row">
+  <h4>Edit/Delete Listings</h4>
+  <div class="createbox scrollbar col-md-10 offset-1" role="navigation">
+    <form (submit)="editListing()" *ngFor="let mylisting of loggeduser._listings">
+      <fieldset>
+        <div class="form-group row">
+
+          <div class="listingbox_div col-md-3">
+              <div class="form-group row">
+                <label>Image Upload</label> 
+              </div>
+              <div class="form-group row">
+                <img src="{{ mylisting.image }}" alt="Bike image">
+             </div>
+            </div>
+
+          <div class="listingbox_div col-md-7">
+
+            <div class="form-group row">
+              <div class="title_box">
+                <label>Title</label>
+                <input 
+                  class="title_input form-control form-control-sm" 
+                  type="text" 
+                  name="mylisting.title"
+                  [(ngModel)]="mylisting.title">
+              </div>
+              <div class="title_box">
+                <label>Img URL</label>
+                <input 
+                  class="img_input form-control form-control-sm" 
+                  type="text" 
+                  name="mylisting.image"
+                  [(ngModel)]="mylisting.image">
+              </div> 
+            </div>
+
+            <div class="form-group row">
+              <label>Description</label>
+              <textarea 
+                class="form-control form-control-sm" 
+                type="text" 
+                name="mylisting.description"
+                [(ngModel)]="mylisting.description">
+              </textarea>
+            </div>
+
+          </div>
+
+          <div class="listingbox_div col-md-2">
+
+            <div class="form-group row">
+              <label>Price</label>
+              <input 
+                class="form-control form-control-sm" 
+                type="text" 
+                name="mylisting.price"
+                [(ngModel)]="mylisting.price">
+            </div>
+            <div class="form-group row">
+              <label>Location</label>
+              <input 
+                class="form-control form-control-sm" 
+                type="text"
+                name="mylisting.location" 
+                [(ngModel)]="mylisting.location">
+                <input class="listingbtn btn btn-info" type="submit" value="UPDATE">
+                <button class="listingbtn btn btn-danger" (click)="delete(listing._id)">DELETE</button>
+            </div>
+
+          </div>
+
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

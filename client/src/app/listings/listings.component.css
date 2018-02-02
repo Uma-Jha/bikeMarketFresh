@@ -1,0 +1,46 @@
+.createbox{
+    border: 2px solid black;
+    padding-bottom: 15px;
+}
+.bigbox {
+    margin: auto;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;    
+}
+.listingbox_div{
+    padding-top: 10px;
+}
+.listingbtn{
+    margin-top: 10px;
+    width: 124px;
+    object-fit: contain;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.title_input{
+    width: 90%
+}
+.img_input{
+    width: 100%;
+    margin: 0;
+}
+.title_box{
+    width: 50%;
+    object-fit: contain;
+}
+input{
+    padding: 4px;
+}
+textarea{
+    padding: 4px;
+}
+.right{
+    object-fit: contain;
+    width: 100%;
+}
+.form-group{
+    margin: 0;
+}
